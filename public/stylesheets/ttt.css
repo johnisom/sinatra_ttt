@@ -17,22 +17,38 @@ main {
 
 .grid {
   display: grid;
-  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  grid-template-rows: 150px 10px 150px 10px 150px;
+  grid-template-columns: 150px 10px 150px 10px 150px;
 }
 
 .box,
 .box form,
-.box form button {
+.box form button,
+.marker {
   width: 150px;
   height: 150px;
 }
-/*
+
+.marker {
+  position: relative;
+  top: -160px;
+  z-index: -1;
+  font-size: 6em;
+  text-align: center;
+  vertical-align: center;
+  padding: 25px;
+}
+
 .invisible {
   opacity: 0;
 }
-*/
+
 
 #ttt-board {
-  width: 450px;
-  height: 450px;
+  width: 470px;
+  height: 470px;
+}
+
+.divider {
+  background-color: #000;
 }
