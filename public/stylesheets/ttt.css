@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+main {
+  margin: 20px;
+}
+
+#flash {
+  padding: 1em;
+  background-color: #ff05;
+}
+
+.grid {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.box,
+.box form,
+.box form button {
+  width: 150px;
+  height: 150px;
+}
+/*
+.invisible {
+  opacity: 0;
+}
+*/
+
+#ttt-board {
+  width: 450px;
+  height: 450px;
+}

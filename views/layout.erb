@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/stylesheets/ttt.css" type="text/css">
+  <title>Tic Tac Toe | A Simple App</title>
+</head>
+
+<body>
+  <header>
+    <% if session[:flash] %>
+    <div id="flash">
+      <%= session.delete(:flash) %>
+    </div>
+    <% end %>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+</body>
+
+</html>
