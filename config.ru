@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-require './ttt'
+require './tic-tac-toe'
 run Sinatra::Application
