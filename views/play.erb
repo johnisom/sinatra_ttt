@@ -1,4 +1,9 @@
-<div class="grid" id="ttt-board">
+<header class="grid" id="scores">
+  <div class="score">Your Score: <%= @human_score %></div>
+  <div class="score">Computer Score: <%= @computer_score %></div>
+</header>
+
+<div class="grid" id="board">
 
   <% first_row do |marker_type, idx| %>
   <div class="box" id="box-<%= idx %>">

@@ -17,8 +17,25 @@ main {
 
 .grid {
   display: grid;
+}
+
+#scores {
+  width: 470px;
+  height: 50px;
+  grid-template-rows: 50px;
+  grid-template-columns: 235px 235px;
+}
+
+.score {
+  font-size: 20pt;
+  text-align: center;
+}
+
+#board {
   grid-template-rows: 150px 10px 150px 10px 150px;
   grid-template-columns: 150px 10px 150px 10px 150px;
+  width: 470px;
+  height: 470px;
 }
 
 .box,
@@ -27,6 +44,8 @@ main {
 .marker {
   width: 150px;
   height: 150px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .marker {
@@ -41,12 +60,6 @@ main {
 
 .invisible {
   opacity: 0;
-}
-
-
-#ttt-board {
-  width: 470px;
-  height: 470px;
 }
 
 .divider {

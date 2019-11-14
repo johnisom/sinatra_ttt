@@ -13,6 +13,8 @@ before '/play' do
   session[:game] ||= Game.new
   @game = session[:game]
   @board = @game.board
+  @human_score = @game.human.score
+  @computer_score = @game.computer.score
 end
 
 helpers do
@@ -39,6 +41,11 @@ def flash(message)
   session[:flash] = message
 end
 
+def play_round(box)
+  @game.human_moves(box)
+  @game.computer_moves
+end
+
 get '/' do
   erb :index
 end
@@ -48,8 +55,6 @@ get '/play' do
 end
 
 post '/play' do
-  flash("Box #{params[:box]} clicked!")
-  @game.human_moves(params[:box].to_i)
-  @game.computer_moves
+  play_round(params[:box].to_i)
   erb :play
 end
