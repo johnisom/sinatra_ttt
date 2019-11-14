@@ -39,6 +39,7 @@ class Board
     return best_square(markers[0]) unless best_square(markers[0]).nil?
     return best_square(markers[1]) unless best_square(markers[1]).nil?
     return 5 if @squares[5].unmarked?
+
     unmarked_keys.sample
   end
 
