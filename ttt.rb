@@ -39,15 +39,15 @@ helpers do
   end
 end
 
-def flash(message)
-  session[:flash] = message
+def flash(message, mode = :neutral)
+  session[:flash] = { message: message, mode: mode }
 end
 
 def give_encouragement(winner)
   message = case winner
             when :human then Game::WIN_MESSAGES.sample
             when :computer then Game::LOSE_MESSAGES.sample
-            when :nobody then Game::DRAW_MESSAGES.sample
+            when :draw then Game::DRAW_MESSAGES.sample
             end
   flash(message)
 end
@@ -66,10 +66,14 @@ def handle_logic
 end
 
 def play_round(box)
-  @game.human_moves(box)
-  handle_logic
-  @game.computer_moves
-  handle_logic
+  if @board.unmarked_keys.include? box
+    @game.human_moves(box)
+    handle_logic
+    @game.computer_moves
+    handle_logic
+  else
+    flash('Sorry, you must choose an empty square.', :error)
+  end
 end
 
 get '/' do
