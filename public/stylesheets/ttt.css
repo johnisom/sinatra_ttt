@@ -10,9 +10,20 @@ main {
   margin: 20px;
 }
 
-#flash {
+.flash {
   padding: 1em;
+}
+
+.neutral {
   background-color: #ff05;
+}
+
+.error {
+  background-color: #f005;
+}
+
+.success {
+  background-color: #0f05;
 }
 
 .grid {

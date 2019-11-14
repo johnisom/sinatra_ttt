@@ -13,8 +13,8 @@
 <body>
   <header>
     <% if session[:flash] %>
-    <div id="flash">
-      <%= session.delete(:flash) %>
+    <div class="flash <%= session[:flash][:mode] %>">
+      <%= session.delete(:flash)[:message] %>
     </div>
     <% end %>
   </header>
