@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Simple player class that has 2 attributes
 class Player
   attr_accessor :marker, :score

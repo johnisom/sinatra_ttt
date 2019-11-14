@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 # Square class represents a box on the board
 class Square
-  INITIAL_MARKER = ''.freeze
+  INITIAL_MARKER = ''
 
   attr_accessor :marker
 

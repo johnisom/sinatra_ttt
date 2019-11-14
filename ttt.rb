@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'tilt/erubis'
@@ -41,9 +43,33 @@ def flash(message)
   session[:flash] = message
 end
 
+def give_encouragement(winner)
+  message = case winner
+            when :human then Game::WIN_MESSAGES.sample
+            when :computer then Game::LOSE_MESSAGES.sample
+            when :nobody then Game::DRAW_MESSAGES.sample
+            end
+  flash(message)
+end
+
+def handle_logic
+  if @game.someone_won_round?
+    @game.give_point
+    give_encouragement(@game.round_winner)
+    @game.reset_round
+    redirect '/play'
+  elsif @game.draw?
+    give_encouragement(@game.round_winner)
+    @game.reset_round
+    redirect '/play'
+  end
+end
+
 def play_round(box)
   @game.human_moves(box)
+  handle_logic
   @game.computer_moves
+  handle_logic
 end
 
 get '/' do

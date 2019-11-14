@@ -1,11 +1,23 @@
+# frozen_string_literal: true
+
 require_relative 'board'
 require_relative 'player'
 
 # Game class that actually plays
 class Game
-  HUMAN_MARKER = 'x'.freeze
-  COMPUTER_MARKER = 'o'.freeze
+  HUMAN_MARKER = 'x'
+  COMPUTER_MARKER = 'o'
   FIRST_TO_MOVE = HUMAN_MARKER
+  WIN_MESSAGES = ['Yeah! 1 point up! Keep on going!',
+                  "Whoa. You're basically a professional!",
+                  'Keep rocking it!'].freeze
+  LOSE_MESSAGES = ["I don't care what computer says, I believe in you!",
+                   'Keep on going!',
+                   "Don't worry, you have totally got this :)",
+                   'Is it just me, or are you going to make a comeback?'].freeze
+  DRAW_MESSAGES = ['That was a close one!',
+                   'You can beat computer next time!',
+                   "Computer may be good, but I belive you're better."].freeze
 
   attr_reader :board, :human, :computer
 
@@ -39,6 +51,14 @@ class Game
     @current_marker = FIRST_TO_MOVE
   end
 
+  def someone_won_round?
+    @board.someone_won?
+  end
+
+  def draw?
+    @board.full? && !someone_won_round?
+  end
+
   def reset_game
     reset_round
     human.score = 0
@@ -57,6 +77,14 @@ class Game
     case board.winning_marker
     when human.marker    then human.score += 1
     when computer.marker then computer.score += 1
+    end
+  end
+
+  def round_winner
+    case board.winning_marker
+    when human.marker then :human
+    when computer.marker then :computer
+    else :draw
     end
   end
 end
