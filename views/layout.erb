@@ -11,17 +11,17 @@
 </head>
 
 <body>
-  <header>
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer>
     <% if session[:flash] %>
     <div class="flash <%= session[:flash][:mode] %>">
       <%= session.delete(:flash)[:message] %>
     </div>
     <% end %>
-  </header>
-
-  <main>
-    <%= yield %>
-  </main>
+  </footer>
 </body>
 
 </html>

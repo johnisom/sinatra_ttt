@@ -77,7 +77,7 @@ def play_round(box)
 end
 
 get '/' do
-  erb :index
+  redirect '/play'
 end
 
 get '/play' do
