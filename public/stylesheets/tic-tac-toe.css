@@ -9,7 +9,7 @@ body {
 
 main {
   position: relative;
-  top: 100px;
+  top: 60px;
 }
 
 main * {
@@ -25,7 +25,7 @@ body > header {
 }
 
 .flash {
-  padding: 1em;
+  padding: 0.7em;
   color: #492C1D;
   text-align: center;
   font-size: 1.3em;
@@ -40,7 +40,7 @@ body > header {
 }
 
 .success {
-  background-color: #7C99B4;
+  background-color: #8ED8E5;
 }
 
 .grid {
@@ -69,7 +69,7 @@ body > header {
 
 .box,
 form,
-button,
+.box button,
 .marker {
   width: 120px;
   height: 120px;
@@ -104,8 +104,8 @@ button,
   justify-content: space-evenly;
 }
 
-.around {
-  justify-content: space-around;
+.between {
+  justify-content: space-between;
 }
 
 footer {
@@ -132,4 +132,51 @@ footer {
   margin-top: auto;
   margin-bottom: auto;
   color: #492C1D;
+}
+
+#reset {
+  width: 374px;
+  height: 75px;
+}
+
+#reset-form {
+  height: inherit;
+  width: inherit;
+  padding: 0.7em 0em;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reset {
+  color: #492C1D;
+  border: none;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 1em;
+  height: 100%;
+  width: 100%;
+}
+
+#select-reset {
+  width: 374px;
+  margin-top: 200px;
+}
+
+#select-reset form {
+  width: 45%;
+}
+
+.reset.confirm,
+.reset.cancel {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.confirm {
+  background-color: #FEA8A5;
+}
+
+.cancel {
+  background-color: #8ED8E5;
 }

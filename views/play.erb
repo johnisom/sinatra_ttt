@@ -6,9 +6,9 @@
 <div class="grid" id="board">
 
   <% first_row do |marker_type, idx| %>
-  <div class="box" id="box-<%= idx %>">
+  <div class="box" >
     <form action="/play" method="POST">
-      <button name="box" value="<%= idx %>" class="invisible" id="button-<%= idx %>"></button>
+      <button name="box" value="<%= idx %>" class="invisible" ></button>
     </form>
     <div class="marker"><%= marker_type %></div>
   </div>
@@ -20,9 +20,9 @@
   <% end %>
 
   <% middle_row do |marker_type, idx| %>
-  <div class="box" id="box-<%= idx %>">
+  <div class="box" >
     <form action="/play" method="POST">
-      <button name="box" value="<%= idx %>" class="invisible" id="button-<%= idx %>"></button>
+      <button name="box" value="<%= idx %>" class="invisible" ></button>
     </form>
     <div class="marker"><%= marker_type %></div>
   </div>
@@ -34,13 +34,19 @@
   <% end %>
 
   <% last_row do |marker_type, idx| %>
-  <div class="box" id="box-<%= idx %>">
+  <div class="box" >
     <form action="/play" method="POST">
-      <button name="box" value="<%= idx %>" class="invisible" id="button-<%= idx %>"></button>
+      <button name="box" value="<%= idx %>" class="invisible" ></button>
     </form>
     <div class="marker"><%= marker_type %></div>
   </div>
   <%= '<div class="divider"></div>' if idx != 9%>
   <% end %>
 
+</div>
+
+<div id="reset">
+  <form id="reset-form" action="/reset">
+    <button class="reset confirm">Reset Game</button>
+  </form>
 </div>

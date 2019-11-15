@@ -11,7 +11,7 @@ configure do
   set :session_key, 'secret'
 end
 
-before '/play' do
+before do
   session[:game] ||= Game.new
   @game = session[:game]
   @board = @game.board
@@ -76,6 +76,10 @@ def play_round(box)
   end
 end
 
+def reset
+  @game.reset_game
+end
+
 get '/' do
   redirect '/play'
 end
@@ -87,4 +91,15 @@ end
 post '/play' do
   play_round(params[:box].to_i)
   erb :play
+end
+
+get '/reset' do
+  flash('Are you sure you want to reset? (This cannot be undone!)', :error)
+  erb :reset
+end
+
+post '/reset' do
+  flash('Game successfully reset!', :success)
+  reset
+  redirect '/play'
 end
