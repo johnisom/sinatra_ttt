@@ -3,7 +3,6 @@ GEM
   specs:
     backports (3.15.0)
     erubis (2.7.0)
-    minitest (5.13.0)
     multi_json (1.14.1)
     mustermann (1.0.3)
     nio4r (2.5.2)
@@ -12,8 +11,6 @@ GEM
     rack (2.0.7)
     rack-protection (2.0.7)
       rack
-    rack-test (1.1.0)
-      rack (>= 1.0, < 3)
     sinatra (2.0.7)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -33,9 +30,7 @@ PLATFORMS
 
 DEPENDENCIES
   erubis
-  minitest
   puma
-  rack-test
   sinatra
   sinatra-contrib
 
