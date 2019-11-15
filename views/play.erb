@@ -1,4 +1,4 @@
-<header class="grid" id="scores">
+<header class="flex between" id="scores">
   <div class="score">Your Score: <%= @human_score %></div>
   <div class="score">Computer Score: <%= @computer_score %></div>
 </header>
@@ -40,7 +40,7 @@
     </form>
     <div class="marker"><%= marker_type %></div>
   </div>
-  <div class="divider"></div>
+  <%= '<div class="divider"></div>' if idx != 9%>
   <% end %>
 
 </div>
