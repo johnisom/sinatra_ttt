@@ -3,7 +3,7 @@
 [Tic Tac Toe][tic-tac-toe-wiki] powered by [sinatra][sinatra-site].
 
 This is a very simple sinatra application where you can play tic tac
-toe against a computer.
+toe against a computer. Because of the very simple nature of this app, this README is going to be pretty sparse.
 
 The app can be found [here][herokuapp] on Heroku.
 
