@@ -13,6 +13,15 @@ POST request to the server when an empty square is clicked.
   <img alt="Screencast of gameplay" src="example.gif">
 </p>
 
+## Installation ##
+
+1. Clone this repository (`git clone https://github.com/johnisom/sinatra_ttt`)
+2. `cd` into this repository (`cd sinatra_ttt`)
+3. Install dependencies (`bundle install`)
+   - If you don’t have ruby-2.6.5, install it
+4. Run the server locally (`bundle exec rackup`)
+5. Enjoy playing tic-tac-toe at http://localhost:9292/
+
 [tic-tac-toe-wiki]: https://en.wikipedia.org/wiki/Tic-tac-toe
 [sinatra-site]: http://sinatrarb.com/
 [herokuapp]: https://just-a-tic-tac-toe-app.herokuapp.com/
