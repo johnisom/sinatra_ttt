@@ -10,3 +10,7 @@ ruby '2.6.5'
 group :production do
   gem 'puma'
 end
+
+group :development do
+  gem 'sinatra-contrib'
+end
